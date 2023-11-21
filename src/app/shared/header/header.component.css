@@ -1,0 +1,82 @@
+
+
+body {
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+
+
+.navigation-bar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    cursor: pointer;
+    padding-top: 20px;
+}
+
+.receipt-icon {
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    margin-right: 25px;
+
+}
+
+nav ul li {
+    margin-top: 20px;
+    list-style: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.button1 {
+    background-color: #edf0eb;
+    border: 2px solid #18204a;
+    color: #18204a;
+    padding: 15px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.button1:hover {
+    background-color: #18204a;
+    color: white;
+}
+
+.button2 {
+    background-color: #18204a;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footer {
+    height: 250px;
+    margin-left: -180px;
+    margin-right: -180px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #c1cebd;
+    border-radius: 2px;
+    margin-top: 190px;
+}
