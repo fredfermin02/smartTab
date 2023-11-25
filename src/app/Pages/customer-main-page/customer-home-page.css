@@ -1,0 +1,455 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+}
+
+body {
+  background: #edf0eb;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container#blur.active {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.navigation-bar {
+  height: 12%;
+  display: flex;
+  align-items: center;
+}
+
+.popup-SignIn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  opacity: 0;
+  width: 500px;
+  padding: 30px 50px;
+  padding-left: 30px;
+  background: #fff;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.50);
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms
+}
+
+.popup-SignIn.active {
+  visibility: visible;
+  top: 20%;
+  opacity: 1;
+  transform: translate(-50%, 50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms
+}
+
+.popup-SignIn .close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  background: #18204a;
+  color: white;
+  text-align: center;
+  line-height: 17px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.popup-SignIn .form h2 {
+  text-align: center;
+  color: #18204a;
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+
+.popup-SignIn .form .form-element {
+  margin: 15px 0px;
+
+}
+
+.popup-SignIn .form .form-element label {
+  font-size: 14px;
+  color: #18204a;
+}
+
+.popup-SignIn .form .form-element input[type="text"],
+.popup-SignIn .form .form-element input[type="password"] {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #18204a;
+  border-radius: 5px;
+}
+
+.popup-SignIn .form .form-element button {
+  width: 105%;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  background: #18204a;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.popup-SignUp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  opacity: 0;
+  width: 500px;
+  padding: 30px 50px;
+  padding-left: 30px;
+  background: #fff;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.50);
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms
+}
+
+.popup-SignUp.active {
+  visibility: visible;
+  top: 20%;
+  opacity: 1;
+  transform: translate(-50%, 50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms
+}
+
+.popup-SignUp .close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  background: #18204a;
+  color: white;
+  text-align: center;
+  line-height: 17px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.popup-SignUp .form h2 {
+  text-align: center;
+  color: #18204a;
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+
+.popup-SignUp .form .form-element {
+  margin: 15px 0px;
+}
+
+.popup-SignUp .form .form-element label {
+  font-size: 14px;
+  color: #18204a;
+}
+
+.popup-SignUp .form .form-element input[type="text"],
+.popup-SignUp .form .form-element input[type="password"] {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #18204a;
+  border-radius: 5px;
+}
+
+.popup-SignUp .form .form-element button {
+  width: 105%;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  background: #18204a;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.popup-Order {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  opacity: 0;
+  width: 500px;
+  padding: 30px 50px;
+  padding-left: 30px;
+  background: #fff;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.50);
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms
+}
+
+.popup-Order.active {
+  visibility: visible;
+  top: 20%;
+  opacity: 1;
+  transform: translate(-50%, 50%) scale(1);
+  transition: top 0ms ease-in-out 0ms,
+    opacity 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms
+}
+
+.popup-Order .close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  background: #18204a;
+  color: white;
+  text-align: center;
+  line-height: 17px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.popup-Order .form h2 {
+  text-align: center;
+  color: #18204a;
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+
+.popup-Order .form .form-element {
+  margin: 15px 0px;
+}
+
+.popup-Order .form .form-element label {
+  font-size: 14px;
+  color: #18204a;
+}
+
+.popup-Order .form .form-element input[type="number"] {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #18204a;
+  border-radius: 5px;
+}
+
+.popup-Order .form .form-element button {
+  width: 105%;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  background: #18204a;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.logo {
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+.receipt-icon {
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul {
+  margin-right: 25px;
+
+}
+
+nav ul li {
+  margin-top: 20px;
+  list-style: none;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.button1 {
+  background-color: #edf0eb;
+  border: 2px solid #18204a;
+  color: #18204a;
+  padding: 15px 32px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button1:hover {
+  background-color: #18204a;
+  color: white;
+}
+
+.button2 {
+  background-color: #18204a;
+  border: 2px solid #18204a;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.receipt-icon {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.center-image {
+  align-items: center;
+  margin-top: 60px;
+}
+
+.dinner-table {
+  width: 80%;
+  height: 400px;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row-restaurant-options {
+  margin: 50px 5px;
+  align-items: center;
+  margin-right: -13%;
+  margin-left: 9%;
+}
+
+.restaurant-card {
+  width: 25%;
+  height: 230px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-bottom: 40px;
+  background-color: white;
+}
+
+.restaurant-card h5 {
+  color: #18204a;
+}
+
+.restaurants-imgs {
+  width: 100%;
+  height: 55%;
+  border-radius: 10px;
+}
+
+.restaurant-card h5 {
+  background-color: white;
+  font-size: 16px;
+}
+
+.restaurant-card p {
+  background-color: white;
+  font-size: 15px;
+}
+
+.row-headings {
+  color: #18204a;
+  margin-left: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+h2 {
+  font-weight: 900;
+}
+
+hr {
+  border: 1px solid #18204a;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 22%;
+}
+
+.employer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  padding: 30px 50px;
+  padding-left: 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+
+.employer .form h2 {
+  text-align: center;
+  color: #18204a;
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+
+.employer .form .form-element {
+  margin: 15px 0px;
+
+}
+
+.employer .form .form-element label {
+  font-size: 14px;
+  color: #18204a;
+}
+
+.employer .form .form-element input[type="text"],
+.employer .form .form-element input[type="number"] {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #18204a;
+  border-radius: 5px;
+}
+
+.employer .form .form-element button {
+  width: 105%;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  background: #18204a;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
