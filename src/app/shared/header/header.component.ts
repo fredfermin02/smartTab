@@ -12,7 +12,7 @@ import { User } from 'src/app/models/user.model';
 export class HeaderComponent  {
 
   declare public user: User;
-  declare public authStatus:boolean;
+  public authStatus:boolean=false;
 
   constructor(private sharedService: SharedService, private userService: UserService) {
     this.user = userService.user;
