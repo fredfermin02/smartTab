@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
 import { IndividualMenuComponent } from './individual-menu/individual-menu.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -26,7 +29,10 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     CommonModule,
     SharedModule,
     RouterModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports:[
     PagesComponent,
