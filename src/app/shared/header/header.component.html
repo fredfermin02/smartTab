@@ -9,10 +9,15 @@
     <a href="customer-home-page.html"><img class="logo" src="assets/logo.png"></a>
     <nav>
       <ul>
-        <li><a class="button1" href="">Sign In</a></li>
-        <li><a class="button2" href="">Sign Up</a></li>
+        <li><a class="button1" (click)="emitClick('.popup-SignIn')">Sign In</a></li>
+        <li *ngIf="!authStatus"><a class="button2" (click)="emitClick('.popup-SignUp')">Sign Up</a></li>
+        <li><p>klk</p></li>
       </ul>
+     
     </nav>
-    <img class="receipt-icon" src="assets/home-page-images/receipt.png">
+    <a (click)="emitClick('.popup-Order')"><img  class="receipt-icon" src="assets/home-page-images/receipt.png"></a>
+    
   </div>
+
+
 </body>
