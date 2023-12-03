@@ -10,13 +10,15 @@
     <nav>
       <ul>
         <li><a class="button1" (click)="emitClick('.popup-SignIn')">Sign In</a></li>
-        <li *ngIf="authStatus"><a class="button2" (click)="emitClick('.popup-SignUp')">Sign Up</a></li>
-        <li><p>klk</p></li>
+        <li><a class="button2" (click)="emitClick('.popup-SignUp')">Sign Up</a></li>
+        <li>
+          <p>klk</p>
+        </li>
       </ul>
-     
+
     </nav>
-    <a (click)="emitClick('.popup-Order')"><img  class="receipt-icon" src="assets/home-page-images/receipt.png"></a>
-    
+    <a (click)="emitClick('.popup-Order')"><img class="receipt-icon" src="assets/home-page-images/receipt.png"></a>
+
   </div>
 
 
