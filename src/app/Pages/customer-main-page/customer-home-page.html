@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="customer-home-page.css">
+  <link rel="icon" type="image/png"
+    href="/Users/danie/Documents/Florida Marine Tanks/Home Page Images/patrick_logo.png">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
+  <title>Smart Tab</title>
+</head>
+
+
+<body>
+
+  <div class="container" id="blur">
+
+    <div class="navigation-bar">
+      <a href="customer-home-page.html"><img class="logo" src="assets/logo.png"></a>
+      <nav>
+        <ul>
+          <li><button class="button1" onclick="toggle()">Sign In</button></li>
+          <li><button class="button2" onclick="toggle()">Sign Up</button></li>
+        </ul>
+
+      </nav>
+      <img class="receipt-icon" onclick="toggle()" src="assets/home-page-images/receipt.png">
+    </div>
+
+    <div class="center-image">
+      <img class="dinner-table" src="assets/home-page-images/dinner-table.jpg">
+    </div>
+
+
+    <div class="row-restaurant-options">
+      <div class="row-headings">
+        <hr>
+        <h2>
+          New on Smart Tab
+        </h2>
+        <hr>
+      </div>
+      <div class="restaurant-card">
+        <img class="restaurants-imgs" src="assets/home-page-images/brunch.jpg">
+        <h5>Bruncherie</h5>
+        <p>Pancakes, Bacon, Eggs, Waffles</p>
+      </div>
+
+
+      <div class="restaurant-card">
+        <img class="restaurants-imgs" src="assets/home-page-images/burgers.jpg">
+        <h5>All-American</h5>
+        <p>Burgers, Wings, Fries, Chicken Strips</p>
+      </div>
+
+
+      <div class="restaurant-card">
+        <img class="restaurants-imgs" src="assets/home-page-images/tacos.jpg">
+        <h5>El Mexicano</h5>
+        <p>Tacos, Burritos, Bowls, Chilli</p>
+      </div>
+    </div>
+
+    <div class="row-restaurant-options">
+      <div class="row-headings">
+        <hr>
+        <h2>
+          Popular right now
+        </h2>
+        <hr>
+      </div>
+      <div class="restaurant-card">
+        <img class="restaurants-imgs" src="assets/home-page-images/italian.jpg">
+        <h5>Dolce Italia</h5>
+        <p>Pasta, Calzone, Risotto, Ravioli</p>
+
+      </div>
+      <div class="restaurant-card">
+        <img class="restaurants-imgs" src="assets/home-page-images/steak.jpg">
+        <h5>Steak House</h5>
+        <p>Churrasco, Sirloin, Wagyu, Rib Eye</p>
+      </div>
+      <div class="restaurant-card">
+        <img class="restaurants-imgs" src="assets/home-page-images/pizza.jpg">
+        <h5>Il Forno</h5>
+        <p>Pizza, Breadsticks, Foccacia, Tots</p>
+      </div>
+    </div>
+
+    <div class="employer">
+      <div class="form">
+        <h2>Add an Employee</h2>
+        <div class="form-element">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-element">
+          <label for="name">Last Name</label>
+          <input type="text" id="lastName" placeholder="Enter your last name">
+        </div>
+        <div class="form-element">
+          <label for="position">Position</label>
+          <input type="text" id="position" placeholder="Position">
+        </div>
+        <div class="form-element">
+          <label for="number">Salary</label>
+          <input type="number" id="number" placeholder="Enter salary">
+        </div>
+        <div class="form-element">
+          <button>Add Employee</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="popup-SignIn">
+    <div class="close-button" onclick="toggle()">&times;</div>
+    <div class="form">
+      <h2>Sign In</h2>
+      <div class="form-element">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter email">
+      </div>
+      <div class="form-element">
+        <label for="password">Password</label>
+        <input type="text" id="password" placeholder="Enter password">
+      </div>
+      <div class="form-element">
+        <button>Sign In</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="popup-SignUp">
+    <div class="close-button" onclick="toggle()">&times;</div>
+    <div class="form">
+      <h2>Sign Up</h2>
+      <div class="form-element">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-element">
+        <label for="name">Last Name</label>
+        <input type="text" id="lastName" placeholder="Enter your last name">
+      </div>
+      <div class="form-element">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter email">
+      </div>
+      <div class="form-element">
+        <label for="password">Password</label>
+        <input type="text" id="password" placeholder="Enter password">
+      </div>
+      <div class="form-element">
+        <label for="password">Repeat Password</label>
+        <input type="text" id="password" placeholder="Enter password">
+      </div>
+      <div class="form-element">
+        <button>Sign Up</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="popup-Order">
+    <div class="close-button" onclick="toggle()">&times;</div>
+    <div class="form">
+      <h2>Order Details</h2>
+      <div class="form-element">
+        <label for="number">Order Number</label>
+        <input type="number" id="name" placeholder="Enter order number">
+      </div>
+      <div class="form-element">
+        <button>Join Order</button>
+      </div>
+      <div class="form-element">
+        <button>View Cart</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="customer-home-page.js"></script>
+</body>
