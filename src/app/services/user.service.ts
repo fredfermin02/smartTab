@@ -20,6 +20,7 @@ const base_url = environment.base_url;
 })
 export class UserService {
   declare public user: User;
+  public status: boolean=false;
   
   constructor(private http: HttpClient,
               private router: Router) {}
@@ -37,33 +38,12 @@ export class UserService {
     const email = this.user.usersEmail;
     google.accounts.id.revoke(email,()=>{
       localStorage.removeItem('token');
-      this.router.navigateByUrl('/login')
+      this.router.navigateByUrl('/home')
+      this.status = false;
     })
 
   }
 
-  validateToken(): Observable<boolean>{
-    const token=localStorage.getItem('token') || '';
-
-    google.accounts.id.initialize({
-      client_id: "963655461253-c8093cl2mrq0b8ad7lq5slqe3ov5130g.apps.googleusercontent.com",
-    });
-
-    return this.http.get(`${base_url}/login/renew`,
-    {headers:{
-      'x-token':this.token
-      }
-    }).pipe(
-      map((resp:any)=>{
-        const {email, google, name, role, uid, img=''}= resp.user;
-        this.user = new User(name, email, '', img,google,role,uid )
-        localStorage.setItem('token',token)
-        return true;
-      }),
-
-      catchError(err => of(false))
-      );9
-  }
 
   createUser(formData:RgeisterForm){
     
@@ -71,29 +51,28 @@ export class UserService {
     .pipe(
       tap((resp:any)=>{
         localStorage.setItem('token',resp.token)
+        this.status = true;
       })
     );
   }
 
-  updateProfile(data: {email:string, name:string, role?:string}){
-    data = {
-      ...data,
-      role: this.user.role
-    }
 
-    return this.http.put(`${base_url}/users/${this.uid}`,data,{headers:{
-      'x-token':this.token
-      }})
-  }
+
 
   loginUser(formData:LoginForm){
     
     return this.http.post(`${base_url}/auth/login`,formData) 
       .pipe(
-        tap((resp:any)=>{
-          localStorage.setItem('token',resp.token)
-        })
-      );
+        map((resp:any)=>{
+          const {email, isActive, name, _id,token}= resp.user;
+          this.user = new User(name, email, _id )
+          localStorage.setItem('token',token)
+          this.status = true;
+          return true;
+        }),
+  
+        catchError(err => of(false))
+        );
   }
 
 

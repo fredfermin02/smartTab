@@ -46,12 +46,13 @@ export class PagesComponent implements OnInit {
     password:['', [Validators.required]]
   });
 
-  login(){
+  login(activateByClass:string){
     console.log(this.loginForm.value)
     this.userService.loginUser(this.loginForm.value).subscribe({
       next: resp => {
-        console.log(resp)
-        this.router.navigateByUrl('/')
+        console.log(this.userService.user)
+        console.log(this.userService.status)
+        this.close(activateByClass)
       },
       error: (e) => {
         //If error happens
@@ -104,7 +105,7 @@ public regFormSubmitted = false;
           
         error: (e) => {
           //If error happens
-          Swal.fire('Error', e.error.msg, 'error')
+          // Swal.fire('Error', e.error.msg, 'error')
         },
       }
     )
