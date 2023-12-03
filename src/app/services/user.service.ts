@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 
 import { RgeisterForm } from '../interfaces/register-form.interface';
 import { LoginForm } from '../interfaces/login.interface';
-import { Observable, catchError, map, of, tap } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 
@@ -21,6 +21,28 @@ const base_url = environment.base_url;
 export class UserService {
   declare public user: User;
   public status: boolean=false;
+
+  private authStatusSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public authStatus$: Observable<boolean> = this.authStatusSubject.asObservable();
+
+  private userSubject: BehaviorSubject<User> = new BehaviorSubject<any>(null);
+  public user$: Observable<User> = this.userSubject.asObservable();
+
+  setUser(user:any): void {
+    this.userSubject.next(user);
+  }
+
+  getUser(): User {
+    return this.userSubject.value;
+  }
+
+  setAuthStatus(status: boolean): void {
+    this.authStatusSubject.next(status);
+  }
+
+  getAuthStatus(): boolean {
+    return this.authStatusSubject.value;
+  }
   
   constructor(private http: HttpClient,
               private router: Router) {}
@@ -65,10 +87,10 @@ export class UserService {
       .pipe(
         map((resp:any)=>{
           const {email, isActive, name, _id,token}= resp.user;
-          this.user = new User(name, email, _id )
+          const user = new User(name, email, _id )
           localStorage.setItem('token',token)
           this.status = true;
-          return true;
+          return user;
         }),
   
         catchError(err => of(false))
