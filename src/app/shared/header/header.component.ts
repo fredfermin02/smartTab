@@ -12,11 +12,10 @@ import { User } from 'src/app/models/user.model';
 export class HeaderComponent  {
 
   declare public user: User;
-  public authStatus:boolean=false;
-
+  authStatus$ = this.userService.authStatus$;
+  user$ = this.userService.user$;
   constructor(private sharedService: SharedService, private userService: UserService) {
     this.user = userService.user;
-    this.authStatus=userService.status;
   }
 
   emitClick(activateClass: string) {
