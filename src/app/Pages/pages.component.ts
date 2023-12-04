@@ -51,13 +51,18 @@ export class PagesComponent implements OnInit {
     console.log(this.loginForm.value)
     this.userService.loginUser(this.loginForm.value).subscribe({
       next: (resp) => {
+        if (!resp) {
+          Swal.fire('Error', 'error');
+          this.close(activateByClass)
+          return
+        } 
         this.userService.setUser(resp)
         this.userService.setAuthStatus(true)
         this.close(activateByClass)
       },
       error: (e) => {
         //If error happens
-        Swal.fire('Error', e.error.msg, 'error');
+        
       }
     })
   }
@@ -105,7 +110,7 @@ public regFormSubmitted = false;
           this.userService.setAuthStatus(true)),
         error: (e) => {
           //If error happens
-          // Swal.fire('Error', e.error.msg, 'error')
+          Swal.fire('Error', e.error.msg, 'error')
         },
       }
     )

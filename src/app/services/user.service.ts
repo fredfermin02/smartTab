@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 
 import { RgeisterForm } from '../interfaces/register-form.interface';
 import { LoginForm } from '../interfaces/login.interface';
-import { BehaviorSubject, Observable, catchError, map, of, tap } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 
@@ -67,7 +67,6 @@ export class UserService {
     .pipe(
       tap((resp:any)=>{
         localStorage.setItem('token',resp.token)
-
       })
     );
   }
@@ -78,17 +77,20 @@ export class UserService {
   loginUser(formData:LoginForm){
     
     return this.http.post(`${base_url}/auth/login`,formData) 
-      .pipe(
-        map((resp:any)=>{
-          const {email, isActive, name, _id,token}= resp.user;
-          const user = new User(name, email, _id )
-          localStorage.setItem('token',token)
+    .pipe(
+      map((resp: any) => {
+        const { email, isActive, name, _id, token } = resp.user;
+        const user = new User(name, email, _id);
+        localStorage.setItem('token', token);
+        return true;
+      }),
+      catchError((error) => {
+        // Handle errors here
+        console.error('Error in login request:', error);
+        return of(false); // Rethrow the error to propagate it to the subscriber
+      })
+    );
 
-          return user;
-        }),
-  
-        catchError(err => of(false))
-        );
   }
 
 
