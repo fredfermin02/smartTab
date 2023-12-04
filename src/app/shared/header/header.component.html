@@ -9,9 +9,13 @@
     <a routerlink="/home"><img class="logo" src="assets/logo.png"></a>
     <nav>
       <ul>
-        <li *ngIf="!(authStatus$ | async) as authStatus"><a class="button1" (click)="emitClick('.popup-SignIn')">Sign In</a></li>
-        <li *ngIf="!(authStatus$ | async) as authStatus"><a class="button2" (click)="emitClick('.popup-SignUp')">Sign Up</a></li>
-        <li *ngIf="user$ | async as user;"><p>{{user.name}}</p></li>
+        <li *ngIf="!(authStatus$ | async) as authStatus"><a class="button1" (click)="emitClick('.popup-SignIn')">Sign
+            In</a></li>
+        <li *ngIf="!(authStatus$ | async) as authStatus"><a class="button2" style="color: white;"
+            (click)="emitClick('.popup-SignUp')">Sign Up</a></li>
+        <li *ngIf="user$ | async as user;">
+          <p>{{user.name}}</p>
+        </li>
 
       </ul>
 
