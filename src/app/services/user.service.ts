@@ -20,7 +20,7 @@ const base_url = environment.base_url;
 })
 export class UserService {
   declare public user: User;
-  public status: boolean=false;
+
 
   private authStatusSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public authStatus$: Observable<boolean> = this.authStatusSubject.asObservable();
@@ -56,14 +56,8 @@ export class UserService {
   }
 
   logout(){
-    
-    const email = this.user.usersEmail;
-    google.accounts.id.revoke(email,()=>{
       localStorage.removeItem('token');
       this.router.navigateByUrl('/home')
-      this.status = false;
-    })
-
   }
 
 
@@ -73,7 +67,7 @@ export class UserService {
     .pipe(
       tap((resp:any)=>{
         localStorage.setItem('token',resp.token)
-        this.status = true;
+
       })
     );
   }
@@ -89,7 +83,7 @@ export class UserService {
           const {email, isActive, name, _id,token}= resp.user;
           const user = new User(name, email, _id )
           localStorage.setItem('token',token)
-          this.status = true;
+
           return user;
         }),
   
