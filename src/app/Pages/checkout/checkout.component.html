@@ -8,27 +8,18 @@
                 <div class="col-9">
                     <h4><strong>Selected Items</strong></h4>
                     <hr>
-                    <div class="row">
+                    <div class="row" *ngFor="let item of cartItems$ | async">
                         <div class="col-7">
-                           <h5><strong>1x Artichoke</strong></h5> 
-                           <p> Artichoke, spinach, cheddar and mushrooms.</p>
-                           <h5 class="fw-semibold pt-3">{{7.50 | currency}}</h5>
+                           <h5><strong>1x {{item.itemName}}</strong>></h5> 
+                           <p> {{item.description}}</p>
+                           <h5 class="fw-semibold pt-3">{{item.price}}</h5>
                         </div>
                         <div class="col">
                             <img src="./assets/home-page-images/burgers.jpg"  class="img-fluid rounded float-end" alt="..."> 
                         </div>
+                        <hr>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-7">
-                           <h5><strong>1x Artichoke</strong></h5> 
-                           <p> Artichoke, spinach, cheddar and mushrooms.</p>
-                           <h5 class="fw-semibold pt-3">{{7.50 | currency}}</h5>
-                        </div>
-                        <div class="col">
-                            <img src="./assets/home-page-images/burgers.jpg"  class="img-fluid rounded float-end" alt="..."> 
-                        </div>
-                    </div>
+
                     <hr>
 
                     
@@ -73,13 +64,9 @@
                 
                 <div class=" position-relative col">
 
-                    <app-check></app-check>    
+                    <app-check [total]="total"></app-check>    
                 </div>
 
-                <div>
-                    
-                    <button mat-button (click)="openModal()">Open Modal</button>
-                </div>
                 
             </div>
         </main>

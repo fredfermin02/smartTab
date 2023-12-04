@@ -28,69 +28,25 @@
 
 
         <div class="containeritm mt-4">
-          <div class="row">
+          <div *ngFor="let food of items | async" class="row">
 
             <div class="containeritm mt-4">
+
               <div class="row">
                 <div class="col-md-4">
                   <img src="./assets/menu-page-image/Spaghetti.jpeg" class="img-fluid">
                 </div>
                 <div class="col-md-8 ">
-                  <h3 class="card-title mt-2">this is name of the food</h3>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ea officia sit. Enim deserunt
-                    molestias nihil, architecto illum minus rem incidunt reprehenderit aperiam soluta. Ratione at
-                    voluptatibus iusto molestiae. Distinctio minus quis explicabo? Corrupti rem iure cum maiores
-                    repudiandae pariatur!</p>
+                  <h3 class="card-title mt-2">{{food.itemName }}</h3>
+                  <p>{{food.description}}</p>
 
                   <div class="bottons text-right">
-                    <p style="font-size: 20px; color: rgb(255, 0, 0) ;">Price: $200</p>
-                    <button class="btn btn-dark ">Add to cart</button>
+                    <p style="font-size: 20px; color: rgb(255, 0, 0) ;">Price: {{food.price | currency}}</p>
+                    <button class="btn btn-dark" (click)="addToCart(food)">Add to cart</button>
                   </div>
                 </div>
                 <hr>
               </div>
-              <div class="containeritm mt-4">
-                <div class="row">
-                  <div class="col-md-4">
-                    <img src="./assets/menu-page-image/soup.jpeg" class="img-fluid">
-
-                  </div>
-                  <div class="col-md-8 ">
-                    <h3 class="card-title mt-2">this is name of the food</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ea officia sit. Enim deserunt
-                      molestias nihil, architecto illum minus rem incidunt reprehenderit aperiam soluta. Ratione at
-                      voluptatibus iusto molestiae. Distinctio minus quis explicabo? Corrupti rem iure cum maiores
-                      repudiandae pariatur!</p>
-
-                    <div class="bottons text-right">
-                      <p style="font-size: 20px; color: rgb(255, 0, 0) ;">Price: $200</p>
-                      <button class="btn btn-dark ">Add to cart</button>
-                    </div>
-                  </div>
-                  <hr>
-
-
-
-
-
-
-
-
-
-
-
                 </div>
-
-
               </div>
-
-
-
-
-
-
-
-
-
-
             </div>
