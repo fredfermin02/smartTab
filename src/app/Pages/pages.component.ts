@@ -11,7 +11,6 @@ import Swal from 'sweetalert2';
 
 
 
-
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
@@ -47,22 +46,16 @@ export class PagesComponent implements OnInit {
     password:['', [Validators.required]]
   });
 
-  login(activateByClass:string){
+  login(){
     console.log(this.loginForm.value)
     this.userService.loginUser(this.loginForm.value).subscribe({
-      next: (resp) => {
-        if (!resp) {
-          Swal.fire('Error', 'error');
-          this.close(activateByClass)
-          return
-        } 
-        this.userService.setUser(resp)
-        this.userService.setAuthStatus(true)
-        this.close(activateByClass)
+      next: resp => {
+        console.log(resp)
+        this.router.navigateByUrl('/')
       },
       error: (e) => {
         //If error happens
-        
+        Swal.fire('Error', e.error.msg, 'error');
       }
     })
   }
@@ -105,9 +98,10 @@ public regFormSubmitted = false;
     this.userService.createUser(this.registerForm.value)
     .subscribe(
       {
-        next: (resp) => (
-          this.userService.setUser(resp),
-          this.userService.setAuthStatus(true)),
+        next: () => (
+          this.router.navigateByUrl('/'),
+          console.log('klk')),
+          
         error: (e) => {
           //If error happens
           Swal.fire('Error', e.error.msg, 'error')

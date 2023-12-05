@@ -2,51 +2,104 @@
 <html>
 
 <head>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
-  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 
 <body>
+    <body style="background-color:#edf0eb;"></body>
+    <div class="container">
 
-  <body style="background-color:#edf0eb;"></body>
-  <div class="container">
-
-    <div class="center-image">
-      <img class="dinner-table" src="../assets/menu-page-image/banner copy.png">
-
-      <div class="search-bar">
-        <div class="row-restaurant-options">
-        </div>
+        <div class="center-image">
+            <img class="dinner-table" src="src/assets/menu-page-image/banner copy.png">
+            
+            <div class="search-bar">
+                <input type="search" placeholder="Search for Food">
+                <a class="button3" href="">Search</a>
+                <div class="row-restaurant-options">
+                </div>
         <div class="row-headings">
-          <hr>
-          <h2>
-            Lunch Menu
-          </h2>
-          <hr>
-        </div>
+            <hr>
+            <h2>
+                Lunch Menu
+            </h2>
+            <hr>
+          </div>
+          
+        
+          <div class="containeritm mt-4">
+            <div class="row">
+
+                <div class="containeritm mt-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="./assets/menu-page-image/Spaghetti.jpeg" class="img-fluid">
+                        </div>
+                        <div class="col-md-8 ">
+                            <h3 class="card-title mt-2">this is name of the food</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ea officia sit. Enim deserunt molestias nihil, architecto illum minus rem incidunt reprehenderit aperiam soluta. Ratione at voluptatibus iusto molestiae. Distinctio minus quis explicabo? Corrupti rem iure cum maiores repudiandae pariatur!</p>
+                            
+                            <div class="bottons text-right">
+                                <p style="font-size: 20px; color: rgb(255, 0, 0) ;">Price: $200</p>
+                                <button class="btn btn-dark ">Add to cart</button>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="containeritm mt-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="./assets/menu-page-image/soup.jpeg" class="img-fluid">
+            
+                            </div>
+                            <div class="col-md-8 ">
+                                <h3 class="card-title mt-2">this is name of the food</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ea officia sit. Enim deserunt molestias nihil, architecto illum minus rem incidunt reprehenderit aperiam soluta. Ratione at voluptatibus iusto molestiae. Distinctio minus quis explicabo? Corrupti rem iure cum maiores repudiandae pariatur!</p>
+                                
+                                <div class="bottons text-right">
+                                    <p style="font-size: 20px; color: rgb(255, 0, 0) ;">Price: $200</p>
+                                    <button class="btn btn-dark ">Add to cart</button>
+                                </div>
+                            </div>
+                            <hr>
+            
+
+      
+
+                    
+
+          
+        
+                       
+                
+                
+    </div>
+    
+
+  </div>
+  
 
 
-        <div class="containeritm mt-4">
-          <div *ngFor="let food of items | async" class="row">
+    
 
-            <div class="containeritm mt-4">
+      
+  
+  
+  
+  
+</div>
 
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="./assets/menu-page-image/Spaghetti.jpeg" class="img-fluid">
-                </div>
-                <div class="col-md-8 ">
-                  <h3 class="card-title mt-2">{{food.itemName }}</h3>
-                  <p>{{food.description}}</p>
 
-                  <div class="bottons text-right">
-                    <p style="font-size: 20px; color: rgb(255, 0, 0) ;">Price: {{food.price | currency}}</p>
-                    <button class="btn btn-dark" (click)="addToCart(food)">Add to cart</button>
-                  </div>
-                </div>
-                <hr>
-              </div>
-                </div>
-              </div>
-            </div>
+
+ 
+ 
+      
+      
+  
+ 
+
+
+
+    
+  
+  
+  

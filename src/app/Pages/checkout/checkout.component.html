@@ -1,66 +1,88 @@
-<main>
-  <h1 class="fw-bold">CheckOut</h1>
-  <h4>Bruncherie</h4>
-  <div style="height: 20px;"></div>
-  <div class="row">
-    <div class="col-9">
-      <h4><strong>Selected Items</strong></h4>
-      <hr>
-      <div class="row" *ngFor="let item of cartItems$ | async">
-        <div class="col-7">
-          <h5><strong>1x {{item.itemName}}</strong>></h5>
-          <p> {{item.description}}</p>
-          <h5 class="fw-semibold pt-3">{{item.price}}</h5>
-        </div>
-        <div class="col">
-          <img src="./assets/home-page-images/burgers.jpg" class="img-fluid rounded float-end" alt="...">
-        </div>
-        <hr>
-      </div>
 
-      <hr>
+ 
+        <main>
+            <h1 class="fw-bold">CheckOut</h1>
+            <h4>Bruncherie</h4>
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-9">
+                    <h4><strong>Selected Items</strong></h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-7">
+                           <h5><strong>1x Artichoke</strong></h5> 
+                           <p> Artichoke, spinach, cheddar and mushrooms.</p>
+                           <h5 class="fw-semibold pt-3">{{7.50 | currency}}</h5>
+                        </div>
+                        <div class="col">
+                            <img src="./assets/home-page-images/burgers.jpg"  class="img-fluid rounded float-end" alt="..."> 
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-7">
+                           <h5><strong>1x Artichoke</strong></h5> 
+                           <p> Artichoke, spinach, cheddar and mushrooms.</p>
+                           <h5 class="fw-semibold pt-3">{{7.50 | currency}}</h5>
+                        </div>
+                        <div class="col">
+                            <img src="./assets/home-page-images/burgers.jpg"  class="img-fluid rounded float-end" alt="..."> 
+                        </div>
+                    </div>
+                    <hr>
 
+                    
+                    <a href="">
+                    <div class="d-flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-plus ms-3 me-3" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                            </svg>
+                            <p class="ms-3 mt-1">Add another item</p>
+                    </div>
+                    </a>
+                    
+                    <hr>
 
-      <a href="">
-        <div class="d-flex flex-row">
-          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-            class="bi bi-bag-plus ms-3 me-3" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
-            <path
-              d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-          </svg>
-          <p class="ms-3 mt-1">Add another item</p>
-        </div>
-      </a>
+                    <h3 class="fw-semibold pt-3">Payment Details</h3>
+                    <hr>
 
-      <hr>
+                    <a href="">
+                        <div class="row">
+                            <div class="col-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                                </svg>
+                            </div>
+                            <div class="col-10">
+                                <h5 class="">Choose a payment method</h5>
+                                <p class="">Please add a payment method to continue with your order.</p>
+                            </div>
+                            <div class="col-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-circle-fill mt-2" viewBox="0 0 16 16">
+                                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
 
-      <h3 class="fw-semibold pt-3">Dining Methods</h3>
-      <hr>
+                </div>
 
-      <div class="row">
-        <div class="col-1">
-          <button routerLink="/thank-you">Dine-In</button>
-        </div>
-        <div class=" col-1">
-          <button routerLink="/thank-you">Carryout</button>
-        </div>
-        <div class="col-10">
-          <h5>Choose a dining method</h5>
-          <p>Please choose a dining method to continue with your order.</p>
-        </div>
-      </div>
+                
+                
+                <div class=" position-relative col">
 
-    </div>
+                    <app-check></app-check>    
+                </div>
 
+                <div>
+                    
+                    <button mat-button (click)="openModal()">Open Modal</button>
+                </div>
+                
+            </div>
+        </main>
 
+    
 
-    <div class=" position-relative col">
-
-      <app-check [total]="total"></app-check>
-    </div>
-
-
-  </div>
-</main>

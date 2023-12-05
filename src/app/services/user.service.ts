@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 
 import { RgeisterForm } from '../interfaces/register-form.interface';
 import { LoginForm } from '../interfaces/login.interface';
-import { BehaviorSubject, Observable, catchError, map, of, tap, throwError } from 'rxjs';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 
@@ -20,29 +20,6 @@ const base_url = environment.base_url;
 })
 export class UserService {
   declare public user: User;
-
-
-  private authStatusSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  public authStatus$: Observable<boolean> = this.authStatusSubject.asObservable();
-
-  private userSubject: BehaviorSubject<User> = new BehaviorSubject<any>(null);
-  public user$: Observable<User> = this.userSubject.asObservable();
-
-  setUser(user:any): void {
-    this.userSubject.next(user);
-  }
-
-  getUser(): User {
-    return this.userSubject.value;
-  }
-
-  setAuthStatus(status: boolean): void {
-    this.authStatusSubject.next(status);
-  }
-
-  getAuthStatus(): boolean {
-    return this.authStatusSubject.value;
-  }
   
   constructor(private http: HttpClient,
               private router: Router) {}
@@ -56,10 +33,37 @@ export class UserService {
   }
 
   logout(){
+    
+    const email = this.user.usersEmail;
+    google.accounts.id.revoke(email,()=>{
       localStorage.removeItem('token');
-      this.router.navigateByUrl('/home')
+      this.router.navigateByUrl('/login')
+    })
+
   }
 
+  validateToken(): Observable<boolean>{
+    const token=localStorage.getItem('token') || '';
+
+    google.accounts.id.initialize({
+      client_id: "963655461253-c8093cl2mrq0b8ad7lq5slqe3ov5130g.apps.googleusercontent.com",
+    });
+
+    return this.http.get(`${base_url}/login/renew`,
+    {headers:{
+      'x-token':this.token
+      }
+    }).pipe(
+      map((resp:any)=>{
+        const {email, google, name, role, uid, img=''}= resp.user;
+        this.user = new User(name, email, '', img,google,role,uid )
+        localStorage.setItem('token',token)
+        return true;
+      }),
+
+      catchError(err => of(false))
+      );9
+  }
 
   createUser(formData:RgeisterForm){
     
@@ -71,26 +75,25 @@ export class UserService {
     );
   }
 
+  updateProfile(data: {email:string, name:string, role?:string}){
+    data = {
+      ...data,
+      role: this.user.role
+    }
 
-
+    return this.http.put(`${base_url}/users/${this.uid}`,data,{headers:{
+      'x-token':this.token
+      }})
+  }
 
   loginUser(formData:LoginForm){
     
     return this.http.post(`${base_url}/auth/login`,formData) 
-    .pipe(
-      map((resp: any) => {
-        const { email, isActive, name, _id, token } = resp.user;
-        const user = new User(name, email, _id);
-        localStorage.setItem('token', token);
-        return true;
-      }),
-      catchError((error) => {
-        // Handle errors here
-        console.error('Error in login request:', error);
-        return of(false); // Rethrow the error to propagate it to the subscriber
-      })
-    );
-
+      .pipe(
+        tap((resp:any)=>{
+          localStorage.setItem('token',resp.token)
+        })
+      );
   }
 
 
