@@ -6,11 +6,11 @@ export class User {
     constructor(
         public name: string,
         public email: string,
+        public isActive: boolean,
         public password?: string,
-        public img?: string,
-        public google?: string,
         public role?: string,
-        public uid? : string
+        public uid? : string,
+        
         ){}
 
 
@@ -22,16 +22,4 @@ export class User {
         return this.name;
     }
 
-    get imageUrl(){
-        if (this.img?.includes('https')) {
-            return this.img
-        }
-
-        if (this.img) {
-            return `${base_url}/uploads/users/cc022292-081b-404f-a664-886cd9f035d5.jpeg`
-        }else{
-            return `${base_url}/uploads/users/cc022292-081b-404f-a664-886cd9f035d5.jpeg`
-        }
-
-    }
 }

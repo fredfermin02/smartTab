@@ -24,7 +24,8 @@ body {
 .receipt-icon {
   height: 40px;
   width: 40px;
-  margin-top: 5px;
+  margin-top: -5px;
+  cursor: pointer;
 }
 
 nav {
@@ -72,14 +73,4 @@ nav ul li {
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-}
-
-.footer {
-  height: 250px;
-  margin-left: -180px;
-  margin-right: -180px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #c1cebd;
-  border-radius: 2px;
-  margin-top: 190px;
 }
