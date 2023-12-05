@@ -1,12 +1,11 @@
 body {
-  margin-right: 200px;
-  margin-left: 200px;
-
+    margin-right: 200px;
+    margin-left: 200px;
 }
 
-* {
-  background-color: #edf0eb;
-  font-family: 'Poppins';
+*{
+    background-color: #edf0eb;
+    font-family: 'Poppins';
 }
 
 * {
@@ -41,6 +40,7 @@ body {
   width: 500px;
   padding: 30px 50px;
   padding-left: 30px;
+  background: #fff;
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.50);
   border-radius: 10px;
   transition: top 0ms ease-in-out 200ms,
@@ -67,7 +67,7 @@ body {
   background: #18204a;
   color: white;
   text-align: center;
-  line-height: 14px;
+  line-height: 17px;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -81,7 +81,6 @@ body {
 
 .popup-SignIn .form .form-element {
   margin: 15px 0px;
-  margin-right: -5%;
 
 }
 
@@ -102,14 +101,13 @@ body {
 }
 
 .popup-SignIn .form .form-element button {
-  width: 101%;
+  width: 105%;
   height: 40px;
   border: none;
   font-size: 15px;
-  margin-top: 10px;
   background: #18204a;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
@@ -122,6 +120,7 @@ body {
   width: 500px;
   padding: 30px 50px;
   padding-left: 30px;
+  background: #fff;
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.50);
   border-radius: 10px;
   transition: top 0ms ease-in-out 200ms,
@@ -148,7 +147,7 @@ body {
   background: #18204a;
   color: white;
   text-align: center;
-  line-height: 14px;
+  line-height: 17px;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -162,7 +161,6 @@ body {
 
 .popup-SignUp .form .form-element {
   margin: 15px 0px;
-  margin-right: -5%;
 }
 
 .popup-SignUp .form .form-element label {
@@ -182,15 +180,14 @@ body {
 }
 
 .popup-SignUp .form .form-element button {
-  width: 101%;
+  width: 105%;
   height: 40px;
   border: none;
   font-size: 15px;
   background: #18204a;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .popup-Order {
@@ -202,6 +199,7 @@ body {
   width: 500px;
   padding: 30px 50px;
   padding-left: 30px;
+  background: #fff;
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.50);
   border-radius: 10px;
   transition: top 0ms ease-in-out 200ms,
@@ -228,13 +226,9 @@ body {
   background: #18204a;
   color: white;
   text-align: center;
-  line-height: 14px;
+  line-height: 17px;
   border-radius: 15px;
   cursor: pointer;
-}
-
-.popup-Order .form {
-  margin-right: -5%;
 }
 
 .popup-Order .form h2 {
@@ -264,13 +258,13 @@ body {
 }
 
 .popup-Order .form .form-element button {
-  width: 100%;
+  width: 105%;
   height: 40px;
   border: none;
   font-size: 15px;
   background: #18204a;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 

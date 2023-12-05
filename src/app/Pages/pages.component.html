@@ -1,71 +1,71 @@
+
 <header>
   <app-header></app-header>
 </header>
 
 
-<body>
+<body >
   <div class="container" id="blur">
-    <router-outlet></router-outlet>
-
+  <router-outlet></router-outlet>
+    
   </div>
-
+  
   <div class="popup-SignIn">
-
-    <button class="close-button" (click)="close('.popup-SignIn')">&times;</button>
-    <form id="loginform" (submit)="login('.popup-SignIn')" [formGroup]="loginForm">
-      <div class="form">
-        <h2>Sign In</h2>
-        <div class="form-element">
-          <label for="email">Email</label>
-          <input formControlName="email" type="text" id="email" placeholder="Enter email">
-        </div>
-        <div class="form-element">
-          <label for="password">Password</label>
-          <input formControlName="password" type="text" id="password" placeholder="Enter password">
-        </div>
-        <div class="form-element">
-          <button>Sign In</button>
-        </div>
-
+    <form id="loginform" (submit)="login()" [formGroup]="loginForm">
+    <button (click)="close('.popup-SignIn')"><div class="close-button" >&times;</div></button>
+    <div class="form">
+      <h2>Sign In</h2>
+      <div class="form-element">
+        <label for="email">Email</label>
+        <input formControlName="email" type="text" id="email" placeholder="Enter email">
       </div>
-    </form>
+      <div class="form-element">
+        <label for="password">Password</label>
+        <input formControlName="password" type="text" id="password" placeholder="Enter password">
+      </div>
+      <div class="form-element">
+        <button>Sign In</button>
+      </div>
+
+    </div>
+  </form>
   </div>
 
   <div class="popup-SignUp">
-    <form id="loginform">
-      <button class="close-button" (click)="close('.popup-SignUp')">&times;</button>
-      <div class="form">
-        <h2>Sign Up</h2>
-        <div class="form-element">
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Enter your name">
-        </div>
-        <div class="form-element">
-          <label for="name">Last Name</label>
-          <input type="text" id="lastName" placeholder="Enter your last name">
-        </div>
-        <div class="form-element">
-          <label for="email">Email</label>
-          <input type="text" id="email" placeholder="Enter email">
-        </div>
-        <div class="form-element">
-          <label for="password">Password</label>
-          <input type="text" id="password" placeholder="Enter password">
-        </div>
-        <div class="form-element">
-          <label for="password">Repeat Password</label>
-          <input type="text" id="password" placeholder="Enter password">
-        </div>
-        <div class="form-element">
-          <button>Sign Up</button>
-        </div>
-
+    <form id="loginform" >
+    <button (click)="close('.popup-SignUp')"><div class="close-button" >&times;</div></button>
+    <div class="form">
+      <h2>Sign Up</h2>
+      <div class="form-element">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
       </div>
+      <div class="form-element">
+        <label for="name">Last Name</label>
+        <input type="text" id="lastName" placeholder="Enter your last name">
+      </div>
+      <div class="form-element">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter email">
+      </div>
+      <div class="form-element">
+        <label for="password">Password</label>
+        <input type="text" id="password" placeholder="Enter password">
+      </div>
+      <div class="form-element">
+        <label for="password">Repeat Password</label>
+        <input type="text" id="password" placeholder="Enter password">
+      </div>
+      <div class="form-element">
+        <button>Sign Up</button>
+      </div>
+
+    </div>
     </form>
   </div>
 
   <div class="popup-Order">
-    <button class="close-button" (click)="close('.popup-Order')">&times;</button>
+    <button><div class="close-button" (click)="close('.popup-Order')">&times;</div></button>
     <div class="form">
       <h2>Order Details</h2>
       <div class="form-element">
@@ -76,9 +76,10 @@
         <button>Join Order</button>
       </div>
       <div class="form-element">
-        <button routerLink="/checkout">View Cart</button>
+        <button>View Cart</button>
       </div>
     </div>
   </div>
-
+  
 </body>
+
