@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
-import { RestaurantService } from 'src/app/services/restaurant.service';
 
 
 
@@ -13,16 +12,15 @@ import { RestaurantService } from 'src/app/services/restaurant.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private restaurantService: RestaurantService) {}
+  constructor() {}
 
-   cartItems$ = this.restaurantService.cartItems$
+  openModal(): void {
+    
+  }
 
-  public total = 0;
+ 
 
   ngOnInit(): void {
-    this.cartItems$.forEach(element => {
-      element.forEach(el=>this.total = +el.price + this.total)
-    });
   }
 
 }
